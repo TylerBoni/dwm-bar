@@ -31,7 +31,7 @@ export SEP2="]"
 #. "$DIR/bar-functions/dwm_connman.sh"
 #. "$DIR/bar-functions/dwm_countdown.sh"
 #. "$DIR/bar-functions/dwm_currency.sh"
-#. "$DIR/bar-functions/dwm_date.sh"
+. "$DIR/bar-functions/dwm_date.sh"
 #. "$DIR/bar-functions/dwm_keyboard.sh"
 #. "$DIR/bar-functions/dwm_loadavg.sh"
 #. "$DIR/bar-functions/dwm_mail.sh"
@@ -48,8 +48,8 @@ export SEP2="]"
 parallelize() {
     while true
     do
-        printf "Running parallel processes\n"
-        #dwm_networkmanager &
+        # printf "Running parallel processes\n"
+        dwm_networkmanager &
         #dwm_weather &
         sleep 5
     done
@@ -70,7 +70,6 @@ do
     #upperbar="$upperbar$(dwm_connman)"
     #upperbar="$upperbar$(dwm_countdown)"
     #upperbar="$upperbar$(dwm_currency)"
-    #upperbar="$upperbar$(dwm_date)"
     #upperbar="$upperbar$(dwm_keyboard)"
     #upperbar="$upperbar$(dwm_loadavg)"
     #upperbar="$upperbar$(dwm_mail)"
@@ -83,6 +82,7 @@ do
     upperbar="$upperbar${__DWM_BAR_NETWORKMANAGER__}"
     #upperbar="$upperbar${__DWM_BAR_WEATHER__}"
     #upperbar="$upperbar$(dwm_network_speed)"; dwm_network_speed_record
+    upperbar="$upperbar$(dwm_date)"
    
     # Append results of each func one by one to the lowerbar string
     lowerbar=""
